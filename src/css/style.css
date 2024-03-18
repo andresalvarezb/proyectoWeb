@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --desktop: 1500px;
+    --desktop: 1100px;
 
     --color-primary: #1e1d2b;
     --color-secondary: #ff702a;
@@ -37,6 +37,11 @@ section {
     justify-content: space-between;
 }
 
+section span {
+    color: var(--color-secondary);
+    text-transform: capitalize;
+}
+
 p {
     color: var(--white);
     letter-spacing: 1px;
@@ -46,6 +51,7 @@ p {
 
 h2 {
     color: var(--white);
+    font-size: 2rem;
 }
 
 img {
@@ -63,7 +69,7 @@ img {
 }
 
 .container {
-    width: clamp(max-width ,100% ,var(--desktop));
+    max-width:var(--desktop);
     margin: 0 auto;
     padding: 2rem;
 }
@@ -88,12 +94,6 @@ img {
     padding: 1rem 4rem;
 }
 
-/* .home {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
-
 .home__article,
 .home__img {
     flex: 1;
@@ -109,19 +109,96 @@ img {
     font-size: 1.2rem;
 }
 
-/* .home__img img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center
-} */
-
 .about__article span {
-    color: var(--color-secondary);
     margin-left: 1rem;
-    text-transform: capitalize;
 }
 
 .about__img,
 .about__article {
     flex: 1;
+}
+
+.food-menu {
+    display: initial;
+    text-align: center;
+}
+
+.food-menu > span {
+    display: block;
+}
+
+.food-menu__items {
+    display: flex;
+    gap: 1rem;
+}
+
+.food-menu__item {
+    background-color: var(--color-ternary);
+    padding: 1.5rem 2rem;
+}
+
+/* .food-menu__item__title,
+.food-menu__item__type {
+    color: var(--color-primary);
+} */
+
+.food-menu__item  p {
+    color: var(--color-primary);
+    margin-block: 0.2rem;
+}
+
+p.food-menu__item__type {
+    font-size: 0.875rem;
+}
+
+p.food-menu__item__price{
+    color: var(--color-secondary);
+}
+
+
+.service {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.service > span {
+    display: block;
+}
+
+.service__items {
+    display: flex;
+    gap: 1rem;
+}
+
+.service__item__img img{
+    width: 80%;
+}
+
+.service__item__title {
+    color: var(--color-secondary);
+    text-transform: capitalize;
+    margin-top: 0;
+}
+
+.service__item  p {
+    color: var(--white);
+    margin-block: 0.2rem;
+    font-size: 0.875rem;
+}
+
+.quality {
+    background-color: var(--color-ternary);
+    display: block;
+    text-align: center;
+    height: auto;
+    padding: 2rem;
+}
+
+.quality__title {
+    color: var(--color-primary);
+}
+
+.quality__btn{
+    margin: 0 auto;
 }
