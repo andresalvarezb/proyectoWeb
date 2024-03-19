@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="src/css/style.css">
     <title>Document</title>
+    <script src="src/js/index.js" type="module" defer></script>
 </head>
+
 <body>
-    
-    <script src="src/js/index.js"></script>
+    <div class="container">
+        <section class="sidebar">
+            <h1 class="sidebar__title">CampusShop</h1>
+            <ul class="sidebar__nav">
+                <li>Todos los productos</li>
+                <li>Abrigos</li>
+                <li>Camisetas</li>
+                <li>Pantalones</li>
+            </ul>
+            <div class="sidebar__car">
+                <p><i class='bx bx-cart-alt'></i> Car</p>
+                <span>0</span>
+            </div>
+            <footer class="sidebar__footer">
+                <p><i class='bx bx-cart-alt'></i> 2023 Camper</p>
+            </footer>
+        </section>
+
+        <main id="main"></main>
+    </div>
+
 </body>
+
 </html>
