@@ -92,6 +92,7 @@ section span {
     max-width: var(--desktop);
     margin: 0 auto;
     padding: 2rem;
+    position: relative;
 }
 
 /* HEADER */
@@ -99,16 +100,36 @@ section span {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    right: 1rem;
+    background-color: var(--color-primary);
+    height: 80px;
 }
 
 .header__logo {
     color: var(--color-secondary);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.menu {
+    display: none;
 }
 
 .header_nav {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
+}
+
+.header_nav a {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.header_nav a:hover {
+    outline: thin solid var(--color-secondary);
+    color: var(--color-secondary);
 }
 
 /* MAIN */
@@ -117,9 +138,9 @@ section span {
 }
 
 /* HOME */
-section.home {
-    height: calc(100vh - 150px);
-}
+/* section.home {
+    height: calc(100vh - 50px);
+} */
 
 /* .home__article,
 .home__img {
@@ -255,10 +276,23 @@ p.food-menu__item__price {
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 .footer-nav-items a {
     text-transform: capitalize;
+}
+
+.footer-nav-items a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-nav-media {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    color: #ff702a;
+    margin-top: 1.5rem;
 }
 
 @media screen and (700px > width) {
@@ -278,8 +312,34 @@ p.food-menu__item__price {
     }
 
     /* HEADER */
+    .menu {
+        display: block;
+        font-size: 3rem;
+        color: #ffefe8;
+        cursor: pointer;
+    }
+
+    .menu:hover {
+        color: var(--color-secondary);
+    }
+
+    .visible {
+        display: none;
+    }
+
     .header_nav {
         gap: 1rem;
+        position: absolute;
+        bottom: -300px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--color-primary);
+        padding-block: 2rem;
+    }
+
+    .header_nav a {
+        text-align: center;
     }
 
     /* MAIN */

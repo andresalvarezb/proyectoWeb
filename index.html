@@ -13,16 +13,17 @@
     <div class="container">
         <header class="header">
             <a href="#" class="header__logo">Foods</a>
-            <nav class="header_nav">
-                <a href="" class="header_nav-item">Home</a>
-                <a href="" class="header_nav-item">About</a>
-                <a href="" class="header_nav-item">Menu</a>
-                <a href="" class="header_nav-item">Service</a>
-                <a href="" class="header_nav-item">Contact</a>
+            <i class='bx bx-menu menu' id="menu"></i>
+            <nav class="header_nav visible" id="menu-list">
+                <a href="#home" class="header_nav-item">Home</a>
+                <a href="#about" class="header_nav-item">About</a>
+                <a href="#food-menu" class="header_nav-item">Menu</a>
+                <a href="#service" class="header_nav-item">Service</a>
+                <a href="#quality" class="header_nav-item">Contact</a>
             </nav>
         </header>
         <main class="main">
-            <section class="home">
+            <section class="home" id="home">
                 <article class="home__article">
                     <h1 class="home__title">Full website</h1>
                     <p class="home__text">Foods the most precious thing</p>
@@ -32,7 +33,7 @@
                     <img src="./src/assets/img/home.png" alt="">
                 </figure>
             </section>
-            <section class="about">
+            <section class="about" id="about">
                 <figure class="about__img">
                     <img src="./src/assets/img/about.png" alt="">
                 </figure>
@@ -44,7 +45,7 @@
                     <a href="" class="about __btn btn">learn more</a>
                 </article>
             </section>
-            <section class="food-menu">
+            <section class="food-menu" id="food-menu">
                 <span>food menu</span>
                 <h2 class="food-menu__title">Fresh taste and grat price</h2>
                 <div class="food-menu__items">
@@ -53,7 +54,7 @@
                             <img src="./src/assets/img/food1.png" alt="">
                         </figcaption>
                         <div>
-                            <p class="food-menu__item__title">Chicken burgen</p>
+                            <p class="food-menu__item__title">Chicken burger</p>
                             <p class="food-menu__item__type">tasty food</p>
                             <p class="food-menu__item__price">$11.00</p>
                         </div>
@@ -63,7 +64,7 @@
                             <img src="./src/assets/img/food2.png" alt="">
                         </figcaption>
                         <div>
-                            <p class="food-menu__item__title">Chicken burgen</p>
+                            <p class="food-menu__item__title">Chicken burger</p>
                             <p class="food-menu__item__type">tasty food</p>
                             <p class="food-menu__item__price">$11.00</p>
                         </div>
@@ -73,14 +74,14 @@
                             <img src="./src/assets/img/food3.png" alt="">
                         </figcaption>
                         <div>
-                            <p class="food-menu__item__title">Chicken burgen</p>
+                            <p class="food-menu__item__title">Chicken burger</p>
                             <p class="food-menu__item__type">tasty food</p>
                             <p class="food-menu__item__price">$11.00</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="service">
+            <section class="service" id="service">
                 <span>services</span>
                 <h2 class="service__title">We provide best food services</h2>
                 <div class="service__items">
@@ -117,20 +118,20 @@
                     </div>
                 </div>
             </section>
-            <section class="quality">
+            <section class="quality" id="quality">
                 <h2 class="quality__title">We make quality food Everyday</h2>
                 <a href="" class="quality__btn btn">learn more</a>
             </section>
         </main>
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <nav class="footer-nav-section">
                 <h4 class="footer__title">menu links</h4>
                 <div class="footer-nav-items">
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">menu</a>
-                    <a href="">service</a>
-                    <a href="">contact</a>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#food-menu">menu</a>
+                    <a href="#service">service</a>
+                    <a href="#footer">contact</a>
                 </div>
             </nav>
             <nav class="footer-nav-section">
@@ -154,11 +155,10 @@
             </nav>
             <nav class="footer-nav-section">
                 <h4 class="footer__title">contact us</h4>
-                <div class="footer-nav-items">
-                    <a href="">about us</a>
-                    <a href="">delivery information</a>
-                    <a href="">privacy policy</a>
-                    <a href="">terms & condition</a>
+                <div class="footer-nav-media">
+                    <i class='bx bxl-facebook-circle' ></i>
+                    <i class='bx bxl-instagram' ></i>
+                    <i class='bx bxl-twitter' ></i>
                 </div>
             </nav>
         </footer>
