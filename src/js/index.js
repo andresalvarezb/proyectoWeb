@@ -1,28 +1,53 @@
-import {DB}  from "../data/db.js";
+import { DB } from "../data/db.js";
+import { abrigosContent } from "./components/abrigos.js";
+import { camisetasContent } from "./components/camisetas.js";
 import { cardProduct } from "./components/card.js";
+import { pantalonesContent } from "./components/pantalones.js";
 
+const containerCards = document.getElementById('container-cards');
+const navItems = document.querySelector('.sidebar__nav')
+const counter = document.getElementById('counter')
 
-const MAIN = document.getElementById('main');
+const data = [...DB.abrigo, ...DB.camiseta, ...DB.pantalon]
 
-const titleMain = document.createElement('h1');
-const contentMain = document.createElement('div');
-
-MAIN.insertAdjacentElement('afterbegin', titleMain);
-titleMain.insertAdjacentElement('afterend', contentMain);
-
-// add clases
-titleMain.setAttribute('class', 'main__title');
-contentMain.setAttribute('class', 'main__cards-container');
-
-// add content
-titleMain.textContent = 'Todos los productos';
-
-contentMain.innerHTML += DB.abrigo.foreach((e) => {
-    cardProduct(e.imagen, e.nombre, e.precio)
+let allProducts = data.map((e) => {
+    return cardProduct(e.imagen, e.nombre, e.precio)
 })
 
-// const content = DB.abrigo.map((e) => {
-//     return cardProduct(e.imagen, e.nombre, e.precio)
-// })
-// console.log(content);
-// contentMain.innerHTML += ...content
+containerCards.innerHTML = allProducts.join('')
+
+navItems.addEventListener('click', (e) => {
+    const item = e.target.innerText.toLowerCase()
+    
+    if (item === 'todos los productos') {
+        containerCards.innerHTML = allProducts.join('')
+        console.log(1);
+    }
+    if (item === 'abrigos') {
+        containerCards.innerHTML = abrigosContent
+        console.log(2);
+    }
+    if (item === 'camisetas') {
+        containerCards.innerHTML = camisetasContent
+        console.log(3);
+    }
+    if (item === 'pantalones') {
+        containerCards.innerHTML = pantalonesContent
+        console.log(4);
+    }
+})
+
+const cardBtn = document.querySelectorAll('.card__btn')
+const cardBtns = [...cardBtn]
+
+let num = 0
+console.log(cardBtns);
+cardBtns.forEach((e) => {
+    console.log(e);
+    e.addEventListener('click', () => {
+        console.log('hi');
+        num += 1
+        counter.textContent = num
+    })
+})
+
