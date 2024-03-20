@@ -19,6 +19,10 @@ html {
     color: var(--color-text);
 }
 
+body {
+    background-color: var(--color-two);
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -38,17 +42,20 @@ a {
     justify-content: space-between;
     height: 100vh;
     gap: 2rem;
-    background-color: var(--color-two);
-    padding: 2rem 0;
 }
 
 .sidebar {
     height: 100%;
-    max-width: 300px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 0;
+}
+
+.sidebar__title:hover {
+    color: var(--color-three);
 }
 
 .sidebar__nav {
@@ -94,6 +101,12 @@ a {
 
 .main {
     flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.main__title:hover {
+    color: var(--color-one);
 }
 
 .main__cards-container {
@@ -115,6 +128,7 @@ a {
     transition: all 300ms linear;
     border-radius: 10px;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 .card:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -123,6 +137,9 @@ a {
 .card__figure {
     margin: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card__img {
     height: 70%;
@@ -144,7 +161,7 @@ a {
 }
 
 .card__btn {
-    background-color: var(--color-three);
+    background-color: var(--color-one);
     padding: 0.5rem 1rem;
     color: var(--color-two);
     border-radius: 5px;
@@ -152,7 +169,7 @@ a {
 }
 
 .card__btn:hover {
-    background-color: var(--color-one);
+    background-color: var(--color-three);
 }
 
 /* CAR */
