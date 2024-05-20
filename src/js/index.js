@@ -1,3 +1,30 @@
+import { CardsContainer } from "./components/CardsContainer"
+
+window.addEventListener('load', (e) => {
+    // carga todos los elementos
+    const cardContainer = document.createElement('cards-container')
+    document.getElementById('main').insertAdjacentElement('beforeend', cardContainer)
+    data.forEach
+
+
+
+    <Card> </Card>
+})
+
+
+customElements.define('cards-container', CardsContainer)
+
+// const navBtns = document.getElementsByClassName('nav__btn')
+
+// navBtns.addEventListener('click', (e) => {
+
+// })
+
+
+
+
+
+
 // import { DB } from "../data/db.js";
 // import { abrigosContent } from "./components/abrigos.js";
 // import { camisetasContent } from "./components/camisetas.js";
@@ -44,7 +71,6 @@ const cardBtns = [...cardBtn]
 let num = 0
 // const carProducts = []
 cardBtns.forEach((e) => {
-    console.log(e);
     e.addEventListener('click', () => {
         num += 1
         counter.textContent = num

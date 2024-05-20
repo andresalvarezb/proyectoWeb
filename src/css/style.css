@@ -30,6 +30,10 @@ img {
     object-position: top;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: #000;
@@ -109,14 +113,14 @@ a {
     color: var(--color-one);
 }
 
-.main__cards-container {
+/* .main__cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-flow: row;
     height: calc(100vh - 140px);
     overflow-y: scroll;
     gap: 1.5rem;
-}
+} */
 
 ::-webkit-scrollbar {
     display: none;

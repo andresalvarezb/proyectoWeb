@@ -1,240 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+        />
+        <link rel="stylesheet" href="src/css/style.css" />
+        <title>Document</title>
+        <!-- <script src="src/js/index.js" type="module" defer></script> -->
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
-    <title>Document</title>
-    <!-- <script src="src/js/index.js" type="module" defer></script> -->
-</head>
+    <body>
+        <div class="container">
+            <section class="sidebar">
+                <h1 class="sidebar__title">CampusShop</h1>
+                <nav>
+                    <ul class="sidebar__nav">
+                        <li class="nav__btn" id="navBtn1"><a href="#">Todos los productos</a></li>
+                        <li class="nav__btn" id="navBtn2"><a href="src/pages/abrigos.html">Abrigos</a></li>
+                        <li class="nav__btn" id="navBtn3"><a href="src/pages/camisetas.html">Camisetas</a></li>
+                        <li class="nav__btn" id="navBtn4"><a href="src/pages/pantalones.html">Pantalones</a></li>
+                    </ul>
+                </nav>
+                <a href="src/pages/car.html" class="sidebar__car">
+                    <div>
+                        <i class="bx bx-cart-alt"></i>
+                        <p>Car</p>
+                    </div>
+                    <span id="counter">0</span>
+                </a>
+                <footer class="sidebar__footer">
+                    <p><i class="bx bx-copyright"></i> 2023 Camper</p>
+                </footer>
+            </section>
 
-<body>
-    <div class="container">
-        <section class="sidebar">
-            <h1 class="sidebar__title">CampusShop</h1>
-            <nav class="sidebar__nav">
-                <a href="#">Todos los productos</a>
-                <a href="src/pages/abrigos.html">Abrigos</a>
-                <a href="src/pages/camisetas.html">Camisetas</a>
-                <a href="src/pages/pantalones.html">Pantalones</a>
-            </nav>
-            <a  href="src/pages/car.html" class="sidebar__car">
-                <div>
-                    <i class='bx bx-cart-alt'></i>
-                    <p>Car</p>
-                </div>
-                <span id="counter">0</span>
-            </a>
-            <footer class="sidebar__footer">
-                <p><i class='bx bx-copyright'></i> 2023 Camper</p>
-            </footer>
-        </section>
-
-        <main class="main">
-            <h1 class="main__title">Todos los productos</h1>
-            <div class="main__cards-container" id="container-cards">
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_787280-MCO51843885132_102022-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Chaqueta Impermeable En Gabán Para Dama 'Azul</h6>
-                            <div>
-                                <span class="card__price">$93.900</span>
-                                <span class="card__btn">Add</span>
+            <main class="main" id="main">
+                <h1 class="main__title">Todos los productos</h1>
+                <!-- <div class="main__cards-container" id="container-cards">
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_787280-MCO51843885132_102022-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_904140-MCO51843801912_102022-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Chaqueta Impermeable En Gabán Para Dama 'Negro'</h6>
-                            <div>
-                                <span class="card__price">$93.900</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Chaqueta Impermeable En Gabán Para Dama
+                                    'Azul
+                                </h6>
+                                <div>
+                                    <span class="card__price">$93.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_904140-MCO51843801912_102022-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_930447-MCO71410142210_092023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Chaqueta Impermeable En Gabán Para Dama 'Blanco'</h6>
-                            <div>
-                                <span class="card__price">$93.900</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Chaqueta Impermeable En Gabán Para Dama
+                                    'Negro'
+                                </h6>
+                                <div>
+                                    <span class="card__price">$93.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_930447-MCO71410142210_092023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_712593-MCO41606376126_052020-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Chaqueta Hombre Cuero Sintético</h6>
-                            <div>
-                                <span class="card__price">$93.900</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Chaqueta Impermeable En Gabán Para Dama
+                                    'Blanco'
+                                </h6>
+                                <div>
+                                    <span class="card__price">$93.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_712593-MCO41606376126_052020-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_829630-MCO31080337339_062019-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Calidad Chaqueta Hombre Algodon Colombiano Buso Ropa Buzos</h6>
-                            <div>
-                                <span class="card__price">$102.000</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Chaqueta Hombre Cuero Sintético
+                                </h6>
+                                <div>
+                                    <span class="card__price">$93.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_829630-MCO31080337339_062019-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_906094-MCO53976036500_022023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Camiseta De Compresión En Licra Uv Slim</h6>
-                            <div>
-                                <span class="card__price">$38.900</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Calidad Chaqueta Hombre Algodon Colombiano
+                                    Buso Ropa Buzos
+                                </h6>
+                                <div>
+                                    <span class="card__price">$102.000</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_906094-MCO53976036500_022023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_649847-MCO43854241255_102020-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Camiseta Tipo Polo Color Dama Mujer</h6>
-                            <div>
-                                <span class="card__price">$26.255</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Camiseta De Compresión En Licra Uv Slim
+                                </h6>
+                                <div>
+                                    <span class="card__price">$38.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_649847-MCO43854241255_102020-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_995623-MCO70722158553_072023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Camiseta Deportiva, Crossfit, Gym, Ejercicios Al Aire Libre</h6>
-                            <div>
-                                <span class="card__price">$29.900</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Camiseta Tipo Polo Color Dama Mujer
+                                </h6>
+                                <div>
+                                    <span class="card__price">$26.255</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_995623-MCO70722158553_072023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_776916-MCO72088562654_102023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Camisetas Bandas De Rock Metal Heavy Riffs</h6>
-                            <div>
-                                <span class="card__price">$32850</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Camiseta Deportiva, Crossfit, Gym,
+                                    Ejercicios Al Aire Libre
+                                </h6>
+                                <div>
+                                    <span class="card__price">$29.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_776916-MCO72088562654_102023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_731406-MCO42646277112_072020-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Pantalon En Dril Licrado Para Hombre</h6>
-                            <div>
-                                <span class="card__price">$58.900</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Camisetas Bandas De Rock Metal Heavy Riffs
+                                </h6>
+                                <div>
+                                    <span class="card__price">$32850</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_731406-MCO42646277112_072020-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_795748-MCO70527773883_072023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Pantalón Camuflado Hermoso</h6>
-                            <div>
-                                <span class="card__price">$104.405</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Pantalon En Dril Licrado Para Hombre
+                                </h6>
+                                <div>
+                                    <span class="card__price">$58.900</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_795748-MCO70527773883_072023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_758206-MCO70501309390_072023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Pantalón Jogger Cargo, Táctico, Militar</h6>
-                            <div>
-                                <span class="card__price">$104.500</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Pantalón Camuflado Hermoso
+                                </h6>
+                                <div>
+                                    <span class="card__price">$104.405</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_758206-MCO70501309390_072023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_947436-MCO69626235546_052023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Pantalón Jeans De Colores Entubado Para Hombre</h6>
-                            <div>
-                                <span class="card__price">$617.50</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Pantalón Jogger Cargo, Táctico, Militar
+                                </h6>
+                                <div>
+                                    <span class="card__price">$104.500</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_947436-MCO69626235546_052023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="card">
-                    <figure class="card__figure">
-                        <div class="card__img">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_618657-MCO69523195685_052023-F.webp"/>
-                        </div>
-                        <figcaption class="card__content">
-                            <h6 class="card__name">Pantalon Camuflado, De Bolsillos 100% Dreal</h6>
-                            <div>
-                                <span class="card__price">$89.990</span>
-                                <span class="card__btn">Add</span>
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Pantalón Jeans De Colores Entubado Para
+                                    Hombre
+                                </h6>
+                                <div>
+                                    <span class="card__price">$617.50</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="card">
+                        <figure class="card__figure">
+                            <div class="card__img">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_2X_618657-MCO69523195685_052023-F.webp"
+                                />
                             </div>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </main>
-    </div>
-
-</body>
-
+                            <figcaption class="card__content">
+                                <h6 class="card__name">
+                                    Pantalon Camuflado, De Bolsillos 100% Dreal
+                                </h6>
+                                <div>
+                                    <span class="card__price">$89.990</span>
+                                    <span class="card__btn">Add</span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div> -->
+            </main>
+        </div>
+        <script type="module" src="./src/js/index.js"></script>
+    </body>
 </html>
