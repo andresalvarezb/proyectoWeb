@@ -1,11 +1,8 @@
-import { DB } from "../data/db";
+import { getAllProducts } from "../data";
 
 export class Products {
-    getProducts() {
-        const {abrigo, camiseta, pantalon} = DB
-        return [...abrigo, ...camiseta, ...pantalon]
+
+    async getAll() {
+        return await getAllProducts()
     }
 }
-
-// const products = new Products()
-// console.log(products.getProducts());

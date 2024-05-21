@@ -1,21 +1,12 @@
-// import { CardsContainer } from "./components/CardsContainer"
-import './components/CardsContainer.js'
-// import { Products } from './controller/products.controller.js';
+import { CardsContainer } from './components/CardsContainer.js'
+import {Products} from './controller/products.controller.js'
 
-window.addEventListener('load', (e) => {
-    // carga todos los elementos
-    // const cardContainer = document.createElement('cards-container')
-    // document.getElementById('main').insertAdjacentElement('beforeend', cardContainer)
-    document.getElementById('main').innerHTML += `
-        <cards-container></cards-container>
-    `
-
+window.addEventListener('load', async (e) => {
+    const products = new Products()
+    const cardsContainer = new CardsContainer(await products.getAll())
+    document.getElementById('main').insertAdjacentElement('beforeend', cardsContainer)
 })
 
-// const products = new Products()
-// console.log(products.getProducts());
-
-// customElements.define('cards-container', CardsContainer)
 
 
 

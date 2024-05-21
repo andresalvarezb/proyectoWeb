@@ -1,21 +1,7 @@
-import { Products } from '../controller/products.controller.js';
-import './CardProduct.js'
+import { CardProduct } from "./CardProduct.js";
 
-import { LitElement, css, html} from "lit";
-
-export class CardsContainer extends LitElement {
-    static properties = {
-        products:{
-            type: Array
-        }
-    }
-
-    constructor() {
-        super();
-        this.products = new Products().getProducts()
-    }
-
-    static styles = css`
+const styles = /*html */ `
+    <style>
         .main__cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -25,16 +11,23 @@ export class CardsContainer extends LitElement {
             gap: 1.5rem;
             background-color: red;
         }
-    `;
+    </style>
+`;
+export class CardsContainer extends HTMLElement {
+    constructor(products) {
+        super();
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.innerHTML = styles
+        this.products = products;
+    }
 
-
-    render() {
-        return html`
+    connectedCallback() {
+        this.shadowRoot.innerHTML += /*html */ `
             <div class="main__cards-container" id="container-cards">
-                ${this.products.map(product => `<card-product .data=${product}></card-product>`)}
+                ${this.products.forEach(product => `<card-product products=${product}></card-product>`)}
             </div>
         `;
     }
 }
-
-customElements.define('cards-container', CardsContainer)
+customElements.define("card-product", CardProduct);
+customElements.define("cards-container", CardsContainer);
