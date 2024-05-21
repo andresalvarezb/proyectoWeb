@@ -1,16 +1,18 @@
+import { Products } from '../controller/products.controller.js';
+import './CardProduct.js'
+
 import { LitElement, css, html} from "lit";
 
 export class CardsContainer extends LitElement {
     static properties = {
-        name: {
-            typeof: String,
-            require: true
+        products:{
+            type: Array
         }
     }
 
     constructor() {
         super();
-        this.name = ''
+        this.products = new Products().getProducts()
     }
 
     static styles = css`
@@ -24,15 +26,15 @@ export class CardsContainer extends LitElement {
             background-color: red;
         }
     `;
-    
+
+
     render() {
         return html`
             <div class="main__cards-container" id="container-cards">
-                <slot name="${this.name}"></slot>
-                <h1>hola</h1>
+                ${this.products.map(product => `<card-product .data=${product}></card-product>`)}
             </div>
         `;
     }
 }
 
-// customElements.define('cards-container', CardsContainer)
+customElements.define('cards-container', CardsContainer)

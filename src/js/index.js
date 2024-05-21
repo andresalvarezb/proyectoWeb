@@ -1,18 +1,50 @@
-import { CardsContainer } from "./components/CardsContainer"
+// import { CardsContainer } from "./components/CardsContainer"
+import './components/CardsContainer.js'
+// import { Products } from './controller/products.controller.js';
 
 window.addEventListener('load', (e) => {
     // carga todos los elementos
-    const cardContainer = document.createElement('cards-container')
-    document.getElementById('main').insertAdjacentElement('beforeend', cardContainer)
-    data.forEach
+    // const cardContainer = document.createElement('cards-container')
+    // document.getElementById('main').insertAdjacentElement('beforeend', cardContainer)
+    document.getElementById('main').innerHTML += `
+        <cards-container></cards-container>
+    `
 
-
-
-    <Card> </Card>
 })
 
+// const products = new Products()
+// console.log(products.getProducts());
 
-customElements.define('cards-container', CardsContainer)
+// customElements.define('cards-container', CardsContainer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const navBtns = document.getElementsByClassName('nav__btn')
 
@@ -33,7 +65,7 @@ customElements.define('cards-container', CardsContainer)
 
 // const containerCards = document.getElementById('container-cards');
 // const navItems = document.querySelector('.sidebar__nav')
-const counter = document.getElementById('counter')
+// const counter = document.getElementById('counter')
 
 // const data = [...DB.abrigo, ...DB.camiseta, ...DB.pantalon]
 
@@ -64,24 +96,24 @@ const counter = document.getElementById('counter')
 //     }
 // })
 
-const cardBtn = document.querySelectorAll('.card__btn')
-// const car = document.getElementById('shooping-car')
-const cardBtns = [...cardBtn]
+// const cardBtn = document.querySelectorAll('.card__btn')
+// // const car = document.getElementById('shooping-car')
+// const cardBtns = [...cardBtn]
 
-let num = 0
-// const carProducts = []
-cardBtns.forEach((e) => {
-    e.addEventListener('click', () => {
-        num += 1
-        counter.textContent = num
-        // AGREGAR AL CARRO
-        // carProducts.push(e.parentElement.parentElement)
-        // console.log(carProducts);
+// let num = 0
+// // const carProducts = []
+// cardBtns.forEach((e) => {
+//     e.addEventListener('click', () => {
+//         num += 1
+//         counter.textContent = num
+//         // AGREGAR AL CARRO
+//         // carProducts.push(e.parentElement.parentElement)
+//         // console.log(carProducts);
         
-    })
-    // car.addEventListener('click', (e) => {
-    //     containerCards.innerHTML = cardProduct
-    // })
-})
+//     })
+//     // car.addEventListener('click', (e) => {
+//     //     containerCards.innerHTML = cardProduct
+//     // })
+// })
 
 
