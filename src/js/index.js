@@ -3,9 +3,11 @@ import { showProducts } from "./pages/Main.view.js";
 
 // Etiquetas
 const navBtns = document.getElementsByClassName("nav__btn");
+const carBtn = document.querySelector('car-button')
 
 // CONSTANTES
 const products = new Products();
+const carProducts = []
 
 window.addEventListener("load", async (e) => {
     showProducts(products.getAll());
@@ -21,6 +23,11 @@ Array.from(navBtns).forEach((navBtn) => {
     });
 });
 
+
+carBtn.addEventListener('click', async(e) => {
+    // console.log(await products.getCarProduct());
+    // showProducts(products.getCarProduct());
+})
 
 
 

@@ -1,5 +1,3 @@
-// import { CardProduct } from "./CardProduct.js";
-
 const styles = /*html */ `
     <link rel="stylesheet" href="../../css/normalize.css" />
     <style>
@@ -103,14 +101,14 @@ const styles = /*html */ `
     </style>
 `;
 
-export class CardsContainer extends HTMLElement {
+export class CarBuysContainer extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = /*html*/ `
             ${styles}
-            <h1 class="main__title">Todos los productos</h1>
-        `
+            <h1 class="main__title">Carrito</h1>
+        `;
         this.products;
     }
 
@@ -118,48 +116,49 @@ export class CardsContainer extends HTMLElement {
         this.products = newProducts;
     }
 
-    saveProducts(product){
-        // const productsBuying = []
-        console.log(product);
-    }
-
-
     render(products) {
         this.shadowRoot.innerHTML += /*html */ `
         <div class="main__cards-container" id="container-cards">
-            ${(products.map((product) => {
-                return /*html */ `
-                    <div class="card">
-                        <figure class="card__figure">
-                            <div class="card__img">
-                                <img src="${product.imagen}" />
+            ${products
+                .map((product) => {
+                    return /*html */ `
+                    <div class="product">
+                        <div>
+                            <div class="product__img">
+                                <img
+                                src="https://http2.mlstatic.com/D_NQ_NP_2X_731406-MCO42646277112_072020-F.webp"
+                                alt=""
+                                />
                             </div>
-                            <figcaption class="card__content">
-                                <h6 class="card__name">${product.nombre}</h6>
-                                <div>
-                                    <span class="card__price">${product.precio}</span>
-                                    <span class="card__btn add-btn">Add</span>
-                                </div>
-                            </figcaption>
-                        </figure>
+                            <div class="product__description">
+                                <h6 class="product__name">Nombre</h6>
+                                <p>Pantalon En Dril Licrado Para Hombre</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product__quantity">
+                                <h6 class="quantity">Cantidad</h6>
+                                <p>2</p>
+                            </div>
+                            <div class="product__price">
+                                <h6 class="price">Precio</h6>
+                                <p>$58.900</p>
+                            </div>
+                            <div class="product__subtotal">
+                                <h6 class="subtotal">Subtotal</h6>
+                                <p>$115.800</p>
+                            </div>
+                        </div>
                     </div>
                 `;
-            })).join('')}
+                })
+                .join("")}
         </div>
         `;
     }
 
     connectedCallback() {
         this.render(this.products);
-        // productos comprados
-        this.buttons = this.shadowRoot.querySelectorAll('.add-btn')
-        this.buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const productName = btn.closest('.card').querySelector('.card__name').textContent;
-                const product = this.products.find(item => item.nombre === productName);
-                this.saveProducts(product);
-            });
-        })
     }
 
     static get observedAttributes() {
@@ -170,4 +169,4 @@ export class CardsContainer extends HTMLElement {
         this.render(now);
     }
 }
-customElements.define("cards-container", CardsContainer);
+customElements.define("cards-container", CarBuysContainer);
