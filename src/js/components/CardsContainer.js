@@ -100,17 +100,21 @@ const styles = /*html */ `
     </style>
 `;
 export class CardsContainer extends HTMLElement {
-    constructor(products) {
+    constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML = styles;
-        this.products = products;
+        this.products;
     }
 
-    connectedCallback() {
+    setProducts(newProducts) {
+        this.products = newProducts
+    }
+
+    render(products) {
         this.shadowRoot.innerHTML += /*html */ `
             <div class="main__cards-container" id="container-cards">
-                ${this.products.map(
+                ${products.map(
                     (product) => /*html */ `
                     <div class="card">
                         <figure class="card__figure">
@@ -132,6 +136,42 @@ export class CardsContainer extends HTMLElement {
                 )}
             </div>
         `;
+    }
+
+    connectedCallback() {
+        this.render(this.products)
+        // this.shadowRoot.innerHTML += /*html */ `
+        //     <div class="main__cards-container" id="container-cards">
+        //         ${this.products.map(
+        //             (product) => /*html */ `
+        //             <div class="card">
+        //                 <figure class="card__figure">
+        //                     <div class="card__img">
+        //                         <img src="${product.imagen}" />
+        //                     </div>
+        //                     <figcaption class="card__content">
+        //                         <h6 class="card__name">${product.nombre}</h6>
+        //                         <div>
+        //                             <span class="card__price"
+        //                                 >$${product.precio}</span
+        //                             >
+        //                             <span class="card__btn">Add</span>
+        //                         </div>
+        //                     </figcaption>
+        //                 </figure>
+        //             </div>
+        //         `,
+        //         )}
+        //     </div>
+        // `;
+    }
+
+    static get observedAttributes() {
+        return ['products']
+    }
+
+    attributeChangedCallback(name,old,now) {
+        this.render(now)
     }
 }
 customElements.define("cards-container", CardsContainer);

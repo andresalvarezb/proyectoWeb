@@ -1,6 +1,13 @@
 import { CardsContainer } from "../components/CardsContainer"
 
-export async function showAllProducts(products) {
-    const cardsContainer = new CardsContainer(await products.getAll())
-    document.getElementById('main').insertAdjacentElement('beforeend', cardsContainer)
+export async function showProducts(products) {
+    const main = document.getElementById('main')
+    const container = document.querySelector('cards-container')
+    if(container) {
+        main.removeChild(container)
+    }
+
+    const cardsContainer = new CardsContainer()
+    cardsContainer.setProducts(await products)
+    main.insertAdjacentElement('beforeend', cardsContainer)
 }

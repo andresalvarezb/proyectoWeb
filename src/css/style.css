@@ -30,12 +30,12 @@
     gap:1.5rem;
 }
 
-.sidebar__nav a {
+.sidebar__nav li {
     cursor: pointer;
     padding: 0.5rem;
 }
 
-.sidebar__nav a:hover {
+.sidebar__nav li:hover {
     color: var(--color-one);
 }
 
