@@ -15,6 +15,8 @@ Array.from(navBtns).forEach((navBtn) => {
     navBtn.addEventListener("click", (e) => {
         if(e.target.textContent == 'Todos los productos') showProducts(products.getAll())
         if(e.target.textContent == 'Abrigos') showProducts(products.getAbrigos())
+        if(e.target.textContent == 'Camisetas') showProducts(products.getCamisetas())
+        if(e.target.textContent == 'Pantalones') showProducts(products.getPantalones())
         console.log(e.target.textContent);
     });
 });
