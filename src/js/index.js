@@ -1,10 +1,9 @@
-import { CardsContainer } from './components/CardsContainer.js'
 import {Products} from './controller/products.controller.js'
+import { showAllProducts } from './pages/Main.view.js'
 
 window.addEventListener('load', async (e) => {
     const products = new Products()
-    const cardsContainer = new CardsContainer(await products.getAll())
-    document.getElementById('main').insertAdjacentElement('beforeend', cardsContainer)
+    showAllProducts(products)
 })
 
 
