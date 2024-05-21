@@ -1,4 +1,4 @@
-export const DB = {
+{
     "abrigo": [
       {
         "nombre": "Chaqueta Impermeable En Gabán Para Dama 'Azul'",
@@ -112,4 +112,4 @@ export const DB = {
         "id":3
       }
     ]
-  }
+}
