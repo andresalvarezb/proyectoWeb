@@ -3,53 +3,43 @@ import { getAllAbrigos } from "../data/abrigo.model";
 import { getAllCamisetas } from "../data/camiseta.model";
 import { getAllPantalones } from "../data/pantalon.model";
 export class Products {
-
     async getAll() {
-        return await getAllProducts()
+        return await getAllProducts();
     }
 
-    async getAbrigos(){
-        return await getAllAbrigos()
+    async getAbrigos() {
+        return await getAllAbrigos();
     }
 
-    async getCamisetas(){
-        return await getAllCamisetas()
+    async getCamisetas() {
+        return await getAllCamisetas();
     }
 
-    async getPantalones(){
-        return await getAllPantalones()
+    async getPantalones() {
+        return await getAllPantalones();
     }
 
-    async getCarProduct(){
-        const productosUnicos = []
-        let productEncontrado
+    async getCarProduct() {
+        const productosUnicos = [];
 
-        const data = await getAllCarProducts()
-        let cantidad = 1
+        const data = await getAllCarProducts();
 
-        data.forEach(product => {
-            if(productosUnicos.includes(product)){
-                productEncontrado = productosUnicos.find(el => el.id == product.id)
-                productEncontrado['cantidad'] += cantidad
-                productEncontrado['total'] = productEncontrado['cantidad'] * productEncontrado['precio']
-            }else {
-                productEncontrado['cantidad'] = cantidad
-                productEncontrado['total'] = productEncontrado['cantidad'] * productEncontrado['precio']
+        for (const i in data) {
+            let encontrado = false;
+            for (let j in productosUnicos) {
+                if (data[i].id == productosUnicos[j].id) {
+                    productosUnicos[j]["cantidad"] += 1;
+                    productosUnicos[j]["total"] = productosUnicos[j]["cantidad"] * productosUnicos[j]["precio"];
+                    encontrado = true;
+                    break;
+                }
             }
-        });
-        
-        console.log(productosUnicos);
-        return productosUnicos
+            if (!encontrado) {
+                data[i]["cantidad"] = 1;
+                data[i]["total"] = data[i]["cantidad"] * data[i]["precio"];
+                productosUnicos.push(data[i]);
+            }
+        }
+        return productosUnicos;
     }
 }
-
-// const productoEncontrado = this. carProducts.find(el => JSON.stringify(el) == JSON.stringify(product))
-        
-//         let cantidad = 1
-//         if (productoEncontrado) {
-//             productoEncontrado['cantidad'] += cantidad
-//             productoEncontrado['total'] = productoEncontrado['cantidad'] * productoEncontrado['precio'] 
-//         } else {
-//             productoEncontrado['cantidad'] = cantidad
-//             productoEncontrado['total'] = productoEncontrado['cantidad'] * productoEncontrado['precio']
-//         }

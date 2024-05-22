@@ -8,7 +8,6 @@ export async function showBuyProducts(products){
     }
 
     const carBuyContainer = new CarBuysContainer()
-    
     carBuyContainer.setProducts(await products)
     main.insertAdjacentElement('beforeend', carBuyContainer)
 }

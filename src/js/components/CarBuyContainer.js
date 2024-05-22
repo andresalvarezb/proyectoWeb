@@ -130,7 +130,7 @@ export class CarBuysContainer extends HTMLElement {
                             </div>
                             <div class="product__description">
                                 <h6 class="product__name">Nombre</h6>
-                                <p>${product.name}</p>
+                                <p>${product.nombre}</p>
                             </div>
                         </div>
                         <div>
@@ -140,7 +140,7 @@ export class CarBuysContainer extends HTMLElement {
                             </div>
                             <div class="product__price">
                                 <h6 class="price">Precio</h6>
-                                <p>$${products.precio}</p>
+                                <p>$${product.precio}</p>
                             </div>
                             <div class="product__subtotal">
                                 <h6 class="subtotal">Subtotal</h6>
