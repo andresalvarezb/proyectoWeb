@@ -5,12 +5,16 @@ import { showProducts } from "./pages/Main.view.js";
 // Etiquetas
 const navBtns = document.getElementsByClassName("nav__btn");
 const carBtn = document.querySelector('car-button')
+const logo = document.querySelector('.sidebar__title')
 
 // CONSTANTES
 const products = new Products();
-const carProducts = []
 
 window.addEventListener("load", async (e) => {
+    showProducts(products.getAll());
+});
+
+logo.addEventListener("click", async (e) => {
     showProducts(products.getAll());
 });
 
@@ -68,24 +72,6 @@ carBtn.addEventListener('click', async(e) => {
 
 // navItems.addEventListener('click', (e) => {
 //     const item = e.target.innerText.toLowerCase()
-
-//     if (item === 'todos los productos') {
-//         containerCards.innerHTML = allProducts.join('')
-//         console.log(1);
-//     }
-//     if (item === 'abrigos') {
-//         containerCards.innerHTML = abrigosContent
-//         console.log(2);
-//     }
-//     if (item === 'camisetas') {
-//         containerCards.innerHTML = camisetasContent
-//         console.log(3);
-//     }
-//     if (item === 'pantalones') {
-//         containerCards.innerHTML = pantalonesContent
-//         console.log(4);
-//     }
-// })
 
 // const cardBtn = document.querySelectorAll('.card__btn')
 // // const car = document.getElementById('shooping-car')

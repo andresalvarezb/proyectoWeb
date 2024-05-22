@@ -1,4 +1,8 @@
 const styles = /*html*/`
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
     <style>
         :root {
             --color-one: #8CB9BD;
@@ -64,6 +68,11 @@ const styles = /*html*/`
             background-color: var(--color-one);
             padding: 0.3em;
             border-radius: 50%;
+            width: 28px;
+            height:28px;
+            display: flex;
+            justify-content: center;
+            align-item: center
         }
 
     </style>

@@ -22,6 +22,7 @@
 
 .sidebar__title:hover {
     color: var(--color-three);
+    cursor: pointer;
 }
 
 .sidebar__nav {
@@ -51,12 +52,14 @@
 }
 
 /* CAR */
-
-.main__cards-container--car {
+car-button {
+    width: 150px
+}
+/* .main__cards-container--car {
     display: initial;
 
-}
-
+} */
+/* 
 .product {
     display: flex;
     justify-content: space-between;
@@ -94,7 +97,7 @@
     text-transform: capitalize;
     margin-bottom: 1rem;
 }
-
+*/
 
 .car__footer {
     display: flex;
@@ -133,4 +136,4 @@
 .total p {
     color: var(--color-four);
 
-}
+} 

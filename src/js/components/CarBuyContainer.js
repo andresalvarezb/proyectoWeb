@@ -1,4 +1,8 @@
 const styles = /*html */ `
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
     <link rel="stylesheet" href="../../css/normalize.css" />
     <style>
         :root {
@@ -38,63 +42,49 @@ const styles = /*html */ `
             text-decoration: none;
             color: #000;
         }
-        .main__cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-flow: row;
-            height: calc(100vh - 140px);
-            overflow-y: scroll;
-            gap: 1.5rem;
+        .main__cards-container--car {
+            display: initial;
+
         }
 
-        .card {
-            max-height: 400px;
-            transition: all 300ms linear;
-            border-radius: 10px;
-            padding: 1rem;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-        }
-        .card:hover {
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        }
-
-        .card__figure {
-            margin: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card__img {
-            height: 70%;
-        }
-        .card__name {
-            font-size: 1rem;
-            margin: 0.5rem 0;
-            font-weight: 500;
-        }
-
-        .card__content {
-            padding-inline: 1rem;
-        }
-
-        .card__content div {
+        .product {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-inline: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .card__btn {
-            background-color: var(--color-one);
-            padding: 0.5rem 1rem;
-            color: var(--color-two);
-            border-radius: 5px;
-            cursor: pointer;
+        .product__img {
+            height: 150px;
+        width: 150px;
         }
 
-        .card__btn:hover {
-            background-color: var(--color-three);
+        .product__img img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
         }
+
+
+        .product > div{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .product > div:last-child{
+            text-align: center;
+        }
+
+
+        .product h6 {
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin-bottom: 1rem;
+        }
+
         ::-webkit-scrollbar {
             display: none;
         }
@@ -119,7 +109,7 @@ export class CarBuysContainer extends HTMLElement {
     render(products) {
         console.log(products);
         this.shadowRoot.innerHTML += /*html */ `
-        <div class="main__cards-container" id="container-cards">
+        <div class="main__cards-container--car" id="container-cards">
             ${products
                 .map((product) => {
                     return /*html */ `
