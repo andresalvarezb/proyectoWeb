@@ -1,4 +1,5 @@
 import { Products } from "./controller/products.controller.js";
+import { showBuyProducts } from "./pages/Car.view.js";
 import { showProducts } from "./pages/Main.view.js";
 
 // Etiquetas
@@ -19,14 +20,12 @@ Array.from(navBtns).forEach((navBtn) => {
         if(e.target.textContent == 'Abrigos') showProducts(products.getAbrigos())
         if(e.target.textContent == 'Camisetas') showProducts(products.getCamisetas())
         if(e.target.textContent == 'Pantalones') showProducts(products.getPantalones())
-        console.log(e.target.textContent);
     });
 });
 
 
 carBtn.addEventListener('click', async(e) => {
-    // console.log(await products.getCarProduct());
-    // showProducts(products.getCarProduct());
+    showBuyProducts(products.getCarProduct());
 })
 
 

@@ -117,6 +117,7 @@ export class CarBuysContainer extends HTMLElement {
     }
 
     render(products) {
+        console.log(products);
         this.shadowRoot.innerHTML += /*html */ `
         <div class="main__cards-container" id="container-cards">
             ${products
@@ -125,28 +126,25 @@ export class CarBuysContainer extends HTMLElement {
                     <div class="product">
                         <div>
                             <div class="product__img">
-                                <img
-                                src="https://http2.mlstatic.com/D_NQ_NP_2X_731406-MCO42646277112_072020-F.webp"
-                                alt=""
-                                />
+                                <img src=${product.imagen} alt="" />
                             </div>
                             <div class="product__description">
                                 <h6 class="product__name">Nombre</h6>
-                                <p>Pantalon En Dril Licrado Para Hombre</p>
+                                <p>${product.name}</p>
                             </div>
                         </div>
                         <div>
                             <div class="product__quantity">
                                 <h6 class="quantity">Cantidad</h6>
-                                <p>2</p>
+                                <p>${product.cantidad}</p>
                             </div>
                             <div class="product__price">
                                 <h6 class="price">Precio</h6>
-                                <p>$58.900</p>
+                                <p>$${products.precio}</p>
                             </div>
                             <div class="product__subtotal">
                                 <h6 class="subtotal">Subtotal</h6>
-                                <p>$115.800</p>
+                                <p>$${product.total}</p>
                             </div>
                         </div>
                     </div>
@@ -169,4 +167,4 @@ export class CarBuysContainer extends HTMLElement {
         this.render(now);
     }
 }
-customElements.define("cards-container", CarBuysContainer);
+customElements.define("car-container", CarBuysContainer);

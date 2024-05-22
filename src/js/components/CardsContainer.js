@@ -112,6 +112,7 @@ export class CardsContainer extends HTMLElement {
             <h1 class="main__title">Todos los productos</h1>
         `
         this.products;
+        this.carProducts = []
     }
 
     setProducts(newProducts) {
@@ -119,10 +120,10 @@ export class CardsContainer extends HTMLElement {
     }
 
     saveProducts(product){
-        // const productsBuying = []
-        console.log(product);
+        this.carProducts.push(product)
+        localStorage.setItem('carProducts', JSON.stringify(this.carProducts))
     }
-
+    
 
     render(products) {
         this.shadowRoot.innerHTML += /*html */ `

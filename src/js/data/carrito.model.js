@@ -1,5 +1,6 @@
 const URL = 'http://localhost:3000/carrito'
 export async function getCardProducts() {
-    const data = await fetch(URL)
-    return data.json()
+    // const data = await fetch(URL)
+    // return data.json()
+    return await JSON.parse(localStorage.getItem('carProducts'))
 }

@@ -21,6 +21,35 @@ export class Products {
     }
 
     async getCarProduct(){
-        return await getAllCarProducts()
+        const productosUnicos = []
+        let productEncontrado
+
+        const data = await getAllCarProducts()
+        let cantidad = 1
+
+        data.forEach(product => {
+            if(productosUnicos.includes(product)){
+                productEncontrado = productosUnicos.find(el => el.id == product.id)
+                productEncontrado['cantidad'] += cantidad
+                productEncontrado['total'] = productEncontrado['cantidad'] * productEncontrado['precio']
+            }else {
+                productEncontrado['cantidad'] = cantidad
+                productEncontrado['total'] = productEncontrado['cantidad'] * productEncontrado['precio']
+            }
+        });
+        
+        console.log(productosUnicos);
+        return productosUnicos
     }
 }
+
+// const productoEncontrado = this. carProducts.find(el => JSON.stringify(el) == JSON.stringify(product))
+        
+//         let cantidad = 1
+//         if (productoEncontrado) {
+//             productoEncontrado['cantidad'] += cantidad
+//             productoEncontrado['total'] = productoEncontrado['cantidad'] * productoEncontrado['precio'] 
+//         } else {
+//             productoEncontrado['cantidad'] = cantidad
+//             productoEncontrado['total'] = productoEncontrado['cantidad'] * productoEncontrado['precio']
+//         }
