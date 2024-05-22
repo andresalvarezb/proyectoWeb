@@ -74,19 +74,34 @@ export class CarButton extends HTMLElement {
         super()
         this.attachShadow({mode:'open'})
         this.shadowRoot.innerHTML = styles
-        this.value
+        this.cantidad = 0
     }
 
-    connectedCallback(){
+    setCantidad(newCantidad) {
+        this.cantidad = newCantidad
+    }
+
+    render(value) {
         this.shadowRoot.innerHTML += /*html */`
             <div class="sidebar__car" >
                 <div id="car" >
                     <i class="bx bx-cart-alt"></i>
                     <p>Car</p>
                 </div>
-                <span id="counter">0</span>
+                <span id="counter">${value}</span>
             </div>
         `
+    }
+    connectedCallback(){
+        this.render(this.cantidad)
+    }
+
+    static get observedAttributes(){
+        return ['cantidad']
+    }
+
+    attributeChangedCallback(name, old, now) {
+        this.render(now)
     }
 }
 

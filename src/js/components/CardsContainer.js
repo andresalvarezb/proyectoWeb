@@ -159,6 +159,9 @@ export class CardsContainer extends HTMLElement {
                 const productName = btn.closest('.card').querySelector('.card__name').textContent;
                 const product = this.products.find(item => item.nombre === productName);
                 this.saveProducts(product);
+
+                // cambiar contador del carrito
+                document.querySelector('car-button').setAttribute('cantidad', (JSON.parse(localStorage.getItem('carProducts')).length))
             });
         })
     }
