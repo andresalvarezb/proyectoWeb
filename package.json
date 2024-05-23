@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "data": "npx json-server ./src/js/data/db.json"
+    "data": "npx json-server ./src/js/data/db.json -h 172.16.101.146 -p 5468"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.0",
