@@ -1,4 +1,4 @@
-import { CardsContainer } from "../components/CardsContainer"
+import { CardsContainer } from "../components/CardsContainer.js"
 
 export async function showProducts(products) {
     // console.log(await products);
